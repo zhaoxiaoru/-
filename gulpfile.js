@@ -34,6 +34,8 @@ var url = require("url");
 // 引入fs 
 var fs = require("fs");
 
+//var string = require("string-loader");
+
 // 构建一个拷贝文件的任务
 gulp.task("copy-index",function(){
 	// 拷贝文件
@@ -63,7 +65,7 @@ gulp.task("webserver",function(){
 	    	livereload:true, // 页面保存浏览器自动刷新
 	    	directoryListing:{   // 目录结构的配置
 	    		enable:true,     // 显示目录
-	    		path:"./"     // 显示具体路径下的目录
+	    		path:"./app"     // 显示具体路径下的目录
 	    	},
 	    	// mock数据
             middleware:function(req,res,next){
@@ -90,7 +92,8 @@ gulp.task("webserver",function(){
 // 编译SASS
 var sassFiles = ["./app/src/styles/**/*.scss"]; 
 var cssFiles = ["./app/src/styles/*.css"];
-var jsFiles = ["./app/src/scripts/app.js"];
+// var jsFiles = ["./app/src/scripts/app.js"];
+var jsFiles = ["./app/src/scripts/**/*.js"];
 
 gulp.task("sass",function(){
 	gulp.src(sassFiles)
@@ -114,11 +117,15 @@ gulp.task("packjs",function(){
         	output:{
         		filename:'[name].js'
         	},
-        	module:{
+        	modules:{
         		loaders:[
                   {
                   	test:/\.js$/,
                   	loader:'imports?define=>false'
+                  },
+                  {
+                    test:/\.string$/,
+                    loader:'string'
                   }
         		]
         	}
@@ -158,11 +165,10 @@ gulp.task("min",["ver","html"]);
 // 监测文件
 gulp.task("watch",function(){
 	gulp.watch("./index.html",["copy-index"]);
-	//gulp.watch("./app/src/scripts/*.js",["concat"]);
 	gulp.watch(sassFiles,["sass"]);
 	gulp.watch(cssFiles,["css"]);
 	gulp.watch("./app/src/scripts/**/*.js",["packjs"]);
 })
 
 // 设置默认任务
-gulp.task("default",["watch","uglify","webserver"]);
+gulp.task("default",["watch","webserver"]);

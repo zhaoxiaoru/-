@@ -1,3 +1,1 @@
-var indexTpl = require("./views/index");
-
-console.log("hello "+indexTpl+'~~~~~~~');
+require("./demos/demo1.js");
