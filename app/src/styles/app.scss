@@ -1,5 +1,67 @@
 @import "./common/reset";
+
+html{
+    font-size:100px;
+}
+
 body{
 	background:$bg;
 	color:$text;
+}
+
+.title{
+	color:#f00;
+	font-weight:bold;
+}
+
+.disable{
+	color:#ccc;
+	text-decoration:line-through;
+}
+
+.enable{
+	color:#f00;
+}
+
+.search{
+	font-size:0.14rem;
+	padding:0.05rem;
+	input{
+		width:2.6rem;
+		height:.25rem;
+		font-size:0.16rem;
+		color:#333;
+		-webkit-appearance:none;
+	}
+	table{
+		width:100%;
+		border-collapse:collapse;
+		thead{
+			td{
+				font-weight:bold;
+				font-size:0.18rem;
+				.allow-down{
+				    width:0;
+				    height:0;
+				    border-left:5px solid transparent;
+				    border-right:5px solid transparent;
+				    border-top:10px solid #000;
+				    display:inline-block;
+				}
+				.allow-up{
+				    width:0;
+				    height:0;
+				    border-left:5px solid transparent;
+				    border-right:5px solid transparent;
+				    border-bottom:10px solid #000;
+				    display:inline-block;
+				}
+			}
+		}
+		td{
+			border:1px solid #333;
+			text-align:center;
+			padding:0.05rem 0.03rem;
+		}
+	}
 }
