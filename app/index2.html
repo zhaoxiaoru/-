@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="/app/prd/styles/app.css">
+</head>
+<body>
+   <!--<div ng-controller="myController" class="search">
+        <p>
+          <input type="text" ng-model="searchText">
+      </p>
+      <table border="0">
+          <thead>
+              <tr>
+                 <td>ID</td>
+                 <td>Name</td>
+                 <td>Phone</td>
+              </tr>
+          </thead>
+          <tbody>
+              <tr ng-repeat="f in friends | filter:search:value">
+                 <td>{{$index+1}}</td>
+                 <td>{{f.name}}</td>
+                 <td>{{f.phone}}</td>
+              </tr>
+          </tbody>
+      </table> 
+    <table border="0">
+    <thead>
+        <tr>
+           <td>ID</td>
+           <td ng-click="setSort('name')">
+              Name
+              <span ng-class="getClass('name')"></span>
+           </td>
+           <td ng-click="setSort('sex')">
+              Sex
+              <span ng-class="getClass('sex')"></span>
+            </td>
+           <td ng-click="setSort('salary')">
+              Salarys
+              <span ng-class="getClass('salary')"></span>
+            </td>
+           <td ng-click="setSort('birthday')">
+              Birthday
+              <span ng-class="getClass('birthday')"></span>
+           </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="user in userInfo | orderBy:sortColumn:reverseSort">
+           <td>{{$index+1}}</td>
+           <td>{{user.name}}</td>
+           <td>{{user.sex}}</td>
+           <td>{{user.salary | currency:"￥"}}</td>
+           <td>{{user.birthday | date:"yyyy-MM-dd"}}</td>
+        </tr>
+    </tbody>
+</table> 
+   </div>-->
+<!--    <div ng-controller="myController" style="font-size:0.14rem">
+    全局{{types}}
+    局部{{names}}
+    <p ng-click="gameStart()">游戏开始</p>
+    <p ng-click="gameOver()">游戏结束</p>
+</div>
+<div ng-controller="myController2">
+   全局{{types}}
+   局部{{names}}
+</div> -->
+<!--    <div ng-controller="showController">
+   <ul>
+     <li>
+        {{user.id}} / {{user.name}} / {{user.sex | gender}}
+     </li>
+   </ul>
+  </div> -->
+ <!--  <div ng-controller="saveController">
+     <label>请输入id:<input type="text" ng-model="id"></label><br>
+     <label>请输入name:<input type="text" ng-model="name"></label><br>
+     <label>请选择性别:
+       <input type="radio" name="sex" checked>男
+       <input type="radio" name="sex">女
+     </label><br>
+     <p ng-click="saveUser()">保存</p>
+ </div> -->
+   <div ng-controller="myTemplate">
+       <select ng-model="template">
+           <option value="/app/src/scripts/tpls/template.string">frame</option>
+           <option value="/app/src/scripts/tpls/frame1.string">frame1</option>
+           <option value="/app/src/scripts/tpls/frame2.string">frame2</option>
+       </select>
+       <p ng-include="template"></p>
+   </div>
+   <script src="/app/libs/angular.min.js"></script>
+   <script src="/app/libs/jquery-1.11.0.min.js"></script>
+   <script src="/app/prd/scripts/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="app/libs/angular.min.js"></script>
+</head>
+<body ng-app="app" ng-controller="mycontroll">
+	<div>
+		<input type="text" ng-model="name" />
+		<p>{{name}} Angular!</p>
+	</div>
+
+	<script type="text/javascript">
+		var app = angular.module("app",[]);
+		app.controller("mycontroll",function($scope){
+			$scope.name ="Tom";
+		})
+
+		var a;
+		function fun(){
+			var i =1;
+			a = i;
+			return i;
+		}
+
+		console.log(fun());
+		console.log(a);
+	</script>
+</body>
+</html>
