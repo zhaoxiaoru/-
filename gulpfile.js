@@ -65,7 +65,7 @@ gulp.task("webserver",function(){
 	    	livereload:true, // 页面保存浏览器自动刷新
 	    	directoryListing:{   // 目录结构的配置
 	    		enable:true,     // 显示目录
-	    		path:"./app"     // 显示具体路径下的目录
+	    		path:"./"     // 显示具体路径下的目录
 	    	},
 	    	// mock数据
             middleware:function(req,res,next){
