@@ -6,9 +6,9 @@ AngularStore.config(['$routeProvider',function($routeProvider){
         	templateUrl:"./tpls/store.html",
             controller:"storeController"
         })
-        .when("/products/:id",{
+        .when("/products/:productSku",{
         	templateUrl:"./tpls/product.html",
-            controller:"productController"
+            controller:"storeController"
         })
         .otherwise({
         	redirectTo:"/store"
