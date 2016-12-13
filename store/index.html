@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="AngularStore">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Angular Store</title>
+
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <script src="./js/libs/jquery.min.js"></script>
+  <script src="./js/libs/bootstrap.min.js"></script>
+
+  <script src="./js/libs/angular.min.js"></script>
+  <script src="./js/libs/angular-route.min.js"></script>
+
+  <script src="./js/product.js"></script>
+  <script src="./js/store.js"></script>
+  <script src="./js/shoppingCart.js"></script>
+
+  <script src="./js/controller.js"></script>
+  <script src="./js/service.js"></script>
+
+  <script src="./js/views/storeServ.js"></script>
+  <script src="./js/views/storeCtrl.js"></script>
+
+  <script src="./js/app.js"></script>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row-fluid">
+        <h1 class="well">
+          <a href="index.html"><img src="img/logo.png" height="60" width="60" alt="logo"></a>
+          果味飘香
+        </h1>
+        <div ng-view></div>
+    </div>
+  </div>
+</body>
+</html>

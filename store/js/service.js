@@ -1,0 +1,1 @@
+var servStore = angular.module("serv-store",[]);

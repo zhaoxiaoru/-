@@ -1,0 +1,46 @@
+<p class="text-info">
+  欢迎光临 Angular Store.<br />
+  请选择您要的产品并将其添加到您的购物车。<br/>
+  当您完成后，请单击“购物车图标”来查看您的订单信息。
+</p>
+
+<p>
+    搜索: <input class="form-control" ng-model="search">
+</p>
+
+<table class="table table-bordered">
+    <tr class="well">
+        <td class="tdRight" colspan="4" >
+            <cart-info is-detail="false"></cart-info>
+        </td>
+    </tr>
+    <tr class="well">
+        <td>图片</td>
+        <td>介绍</td>
+        <td>价格</td>
+        <td>操作</td>
+    </tr>
+    <tr ng-repeat="product in products | orderBy:'name' | filter:search">
+        <td class="tdCenter"><img ng-src="./img/products/{{product.sku}}.jpg" alt="" /></td>
+        <td>
+            <a href="#/products/{{product.sku}}"><b>{{product.name}}</b></a><br />
+            {{product.description}}
+        </td>
+        <td class="tdRight">
+            {{product.price | currency}}
+        </td>
+        <td class="tdCenter">
+            <a href="">
+                加入购物车
+            </a>
+        </td>
+    </tr>
+    <tr class="well">
+        <td class="tdRight" colspan="4" >
+            <a href="" title="go to shopping cart">
+                <i class="glyphicon glyphicon-shopping-cart" />
+                <b></b> 个商品, <b></b>
+            </a>
+        </td>
+    </tr>
+</table>

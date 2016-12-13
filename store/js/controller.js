@@ -1,0 +1,1 @@
+var ctrlStore = angular.module("ctrl-store",[]);
