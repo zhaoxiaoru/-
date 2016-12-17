@@ -19,15 +19,14 @@
 
                 <tr>
                     <td class="tdRight"><b>热量</b></td>
-                    <td class="tdCenter"><h2></h2></td>
+                    <td class="tdCenter"><h2>{{product.cal}}</h2></td>
                     <td />
                 </tr>
-                <tr>
-                    <td class="tdRight"><b></b></td>
-                    <td class="tdCenter"><img src="" alt="" /></td>
+                <tr ng-repeat="(key,value) in product.nutrients">
+                    <td class="tdRight"><b>{{key}}</b></td>
+                    <td class="tdCenter"><img ng-src="./img/r{{value}}.png" alt="" /></td>
                     <td>
-                        <b></b>:
-                        
+                        <b>{{store.dvaCaption[value]}}</b>：{{store.dvaRange[value]}}
                     </td>
                 </tr>
 
@@ -52,7 +51,7 @@
                 <i class="glyphicon glyphicon-trash icon-white" /> 从购物车移除
             </button>
             <button
-                class="btn btn-block">
+                class="btn btn-block" onclick="location.href='http://localhost/store/index.html#/store'">
                 <i class="glyphicon glyphicon-chevron-left" /> 返回商品列表
             </button>
         </div>

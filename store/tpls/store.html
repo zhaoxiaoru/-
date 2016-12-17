@@ -20,7 +20,7 @@
         <td>价格</td>
         <td>操作</td>
     </tr>
-    <tr ng-repeat="product in products | orderBy:'name' | filter:search">
+    <tr ng-repeat="product in store.products | orderBy:'name' | filter:search">
         <td class="tdCenter"><img ng-src="./img/products/{{product.sku}}.jpg" alt="" /></td>
         <td>
             <a href="#/products/{{product.sku}}"><b>{{product.name}}</b></a><br />
@@ -30,7 +30,7 @@
             {{product.price | currency}}
         </td>
         <td class="tdCenter">
-            <a href="">
+            <a href="" ng-click="cart.addItem(product.sku,product.name,product.price,1)">
                 加入购物车
             </a>
         </td>

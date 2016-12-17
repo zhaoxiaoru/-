@@ -10,6 +10,10 @@ AngularStore.config(['$routeProvider',function($routeProvider){
         	templateUrl:"./tpls/product.html",
             controller:"storeController"
         })
+        .when("/cart",{
+            templateUrl:"./tpls/shoppingCart.html",
+            controller:"cartController"
+        })
         .otherwise({
         	redirectTo:"/store"
         })
